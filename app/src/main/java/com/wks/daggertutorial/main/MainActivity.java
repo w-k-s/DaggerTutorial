@@ -1,11 +1,14 @@
 package com.wks.daggertutorial.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.wks.daggertutorial.R;
 import com.wks.daggertutorial.base.BaseActivity;
+import com.wks.daggertutorial.examples.example1.Example1Activity;
+import com.wks.daggertutorial.examples.example2.Example2Activity;
 
 public class MainActivity extends BaseActivity implements MainFragmentListener{
 
@@ -22,13 +25,14 @@ public class MainActivity extends BaseActivity implements MainFragmentListener{
     @Override
     public void onExample1Clicked() {
         // TODO start example 1 activity
-        Toast.makeText(this, "Launch example 1", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Example1Activity.class);
+        startActivity(intent);
     }
 
     @Override
     public void onExample2Clicked() {
-        // TODO start example 2 activity
-        Toast.makeText(this, "Launch example 2", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Example2Activity.class);
+        startActivity(intent);
     }
 
     @Override

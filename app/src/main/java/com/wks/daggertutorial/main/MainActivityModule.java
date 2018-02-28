@@ -1,7 +1,7 @@
 package com.wks.daggertutorial.main;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 
 import com.wks.daggertutorial.base.BaseActivityModule;
 import com.wks.daggertutorial.dependencies.PerActivity;
@@ -9,7 +9,7 @@ import com.wks.daggertutorial.dependencies.PerActivity;
 import dagger.Binds;
 import dagger.Module;
 import dagger.android.AndroidInjector;
-import dagger.android.support.FragmentKey;
+import dagger.android.FragmentKey;
 import dagger.multibindings.IntoMap;
 
 /**
@@ -17,7 +17,8 @@ import dagger.multibindings.IntoMap;
  * (thereby gaining access to this activity’s, and in turn the application’s, dependencies).
  *
  */
-@Module(includes = BaseActivityModule.class)
+@Module(includes = BaseActivityModule.class,
+        subcomponents = MainFragmentSubcomponent.class)
 public abstract class MainActivityModule {
 
     /**
@@ -52,5 +53,6 @@ public abstract class MainActivityModule {
     @Binds
     @IntoMap
     @FragmentKey(MainFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment> mainFragmentInjectorFactory(MainFragmentSubcomponent.Builder builder);
+    abstract AndroidInjector.Factory<? extends Fragment>
+    mainFragmentInjectorFactory(MainFragmentSubcomponent.Builder builder);
 }

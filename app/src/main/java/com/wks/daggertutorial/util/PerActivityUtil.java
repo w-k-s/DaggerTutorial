@@ -22,7 +22,7 @@ public class PerActivityUtil {
     private final Activity activity;
 
     @Inject
-    private PerActivityUtil(Activity activity){
+    public PerActivityUtil(Activity activity){
         this.activity = activity;
     }
 

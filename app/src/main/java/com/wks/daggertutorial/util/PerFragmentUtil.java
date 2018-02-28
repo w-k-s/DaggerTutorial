@@ -1,6 +1,7 @@
 package com.wks.daggertutorial.util;
 
-import android.support.v4.app.Fragment;
+
+import android.app.Fragment;
 
 import com.wks.daggertutorial.dependencies.PerFragment;
 
@@ -24,7 +25,7 @@ public class PerFragmentUtil {
     private final Fragment fragment;
 
     @Inject
-    private PerFragmentUtil(@Named(FRAGMENT) Fragment fragment) {
+    public PerFragmentUtil(@Named(FRAGMENT) Fragment fragment) {
         this.fragment = fragment;
     }
 

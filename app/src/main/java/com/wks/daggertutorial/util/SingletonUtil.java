@@ -16,11 +16,11 @@ public class SingletonUtil {
      * Inject constructor arguments (there aren't any)
      */
     @Inject
-    private SingletonUtil(){
+    public SingletonUtil(){
 
     }
 
-    public String toString(){
+    public String doSomething(){
         return String.format("%s...%s",getClass().getSimpleName(),hashCode());
     }
 }
