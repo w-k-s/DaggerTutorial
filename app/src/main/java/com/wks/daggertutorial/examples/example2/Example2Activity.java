@@ -7,9 +7,6 @@ import com.wks.daggertutorial.base.BaseActivity;
 import com.wks.daggertutorial.examples.example2.fragments.fragment_a.Example2AFragment;
 import com.wks.daggertutorial.examples.example2.fragments.fragment_b.Example2BFragment;
 
-/**
- * Created by waqqassheikh on 28/02/2018.
- */
 
 public class Example2Activity extends BaseActivity {
 

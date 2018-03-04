@@ -21,7 +21,7 @@ import dagger.multibindings.IntoMap;
  */
 
 @Module(includes = BaseActivityModule.class,
-subcomponents = Example2AFragmentSubcomponent.class)
+        subcomponents = {Example2AFragmentSubcomponent.class, Example2BFragmentSubcomponent.class})
 public abstract class Example2ActivityModule {
 
     @Binds

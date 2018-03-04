@@ -15,9 +15,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasFragmentInjector;
 
-/**
- * Created by waqqassheikh on 26/02/2018.
- */
 
 public class BaseActivity extends Activity implements HasFragmentInjector{
 
