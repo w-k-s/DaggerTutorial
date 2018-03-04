@@ -1,29 +1,22 @@
 package com.wks.daggertutorial.examples.example1;
 
 import android.app.Activity;
-import android.app.Fragment;
 
 import com.wks.daggertutorial.base.BaseActivityModule;
 import com.wks.daggertutorial.dependencies.PerActivity;
+import com.wks.daggertutorial.dependencies.PerFragment;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
-/**
- * Created by waqqassheikh on 28/02/2018.
- */
-@Module(includes = BaseActivityModule.class,
-subcomponents = Example1FragmentSubcomponent.class)
+
+@Module(includes = BaseActivityModule.class)
 public abstract class Example1ActivityModule {
 
-    @Binds
-    @IntoMap
-    @FragmentKey(Example1Fragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
-    example1FragmentInjectorFactory(Example1FragmentSubcomponent.Builder builder);
+    @PerFragment
+    @ContributesAndroidInjector(modules = Example1FragmentModule.class)
+    abstract Example1Fragment example1FragmentInjector();
 
     @Binds
     @PerActivity

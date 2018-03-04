@@ -1,24 +1,21 @@
 package com.wks.daggertutorial.main;
 
 import android.app.Activity;
-import android.app.Fragment;
 
 import com.wks.daggertutorial.base.BaseActivityModule;
 import com.wks.daggertutorial.dependencies.PerActivity;
+import com.wks.daggertutorial.dependencies.PerFragment;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * - The MainActivityModule specifies that the MainFragmentSubcomponent is a subcomponent of this module
  * (thereby gaining access to this activity’s, and in turn the application’s, dependencies).
  *
  */
-@Module(includes = BaseActivityModule.class,
-        subcomponents = MainFragmentSubcomponent.class)
+@Module(includes = BaseActivityModule.class)
 public abstract class MainActivityModule {
 
     /**
@@ -37,22 +34,7 @@ public abstract class MainActivityModule {
     @PerActivity
     abstract MainFragmentListener mainFragmentListener(MainActivity mainActivity);
 
-    // TODO (ContributesAndroidInjector) remove this in favor of @ContributesAndroidInjector
-
-    /**
-     * As we said earlier, if a subactivity extends BaseActivity, then the subactivity's module
-     * must extend the BaseActivity's module to provide its dependencies.
-     *
-     * The BaseActivity has a dependency of DispatchingAndroidInjector<Fragment>. The module is providing it.
-     * The MainFragmentSubcomponent includes the MainFragmentModule. The MainFragmentModule provides the fragment to be injected.
-     *
-     * The mainFragmentInjectorFactory method takes in the MainFragmentSubcomponent.Builder
-     * and returns the AndroidInjectorFactory. This provides the injector for the MainFragment.
-     *
-     */
-    @Binds
-    @IntoMap
-    @FragmentKey(MainFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
-    mainFragmentInjectorFactory(MainFragmentSubcomponent.Builder builder);
+    @PerFragment
+    @ContributesAndroidInjector(modules = MainFragmentModule.class)
+    abstract MainFragment mainFragmentInjector();
 }
