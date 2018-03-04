@@ -15,8 +15,11 @@ import com.wks.daggertutorial.util.SingletonUtil;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 
-public class Example2BFragment extends BaseFragment implements View.OnClickListener{
+
+public class Example2BFragment extends BaseFragment{
 
     @Inject
     SingletonUtil singletonUtil;
@@ -25,7 +28,7 @@ public class Example2BFragment extends BaseFragment implements View.OnClickListe
 
     @Inject PerFragmentUtil perFragmentUtil;
 
-    private TextView someText;
+    @BindView(R.id.some_text) TextView someText;
 
     @Nullable
     @Override
@@ -33,23 +36,8 @@ public class Example2BFragment extends BaseFragment implements View.OnClickListe
         return inflater.inflate(R.layout.example_2_fragment_b, container, false);
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        someText = view.findViewById(R.id.some_text);
-        view.findViewById(R.id.do_something).setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.do_something:
-                doSomething();
-        }
-    }
-
-    private void doSomething() {
+    @OnClick(R.id.do_something)
+    void doSomething() {
         String something = singletonUtil.doSomething();
         something += "\n" + perActivityUtil.doSomething();
         something += "\n" + perFragmentUtil.doSomething();
