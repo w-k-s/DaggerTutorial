@@ -8,7 +8,7 @@ import com.wks.daggertutorial.dependencies.PerChildFragment;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import static com.wks.daggertutorial.base.BaseChildFragmentModule.CHILD_FRAGMENT;
+import static com.wks.daggertutorial.ui.common.view.BaseChildFragmentModule.CHILD_FRAGMENT;
 
 /**
  * The PerChildFragmentUtil is scoped with @PerChildFragment.

@@ -2,8 +2,8 @@ package com.wks.daggertutorial.ui.examples.example1.view;
 
 import android.app.Fragment;
 
-import com.wks.daggertutorial.base.BaseFragmentModule;
 import com.wks.daggertutorial.dependencies.PerFragment;
+import com.wks.daggertutorial.ui.common.view.BaseFragmentModule;
 import com.wks.daggertutorial.ui.examples.example1.presenter.Example1PresenterModule;
 
 import javax.inject.Named;

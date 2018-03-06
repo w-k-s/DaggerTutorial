@@ -8,7 +8,8 @@ import com.wks.daggertutorial.dependencies.PerFragment;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import static com.wks.daggertutorial.base.BaseFragmentModule.FRAGMENT;
+import static com.wks.daggertutorial.ui.common.view.BaseFragmentModule.FRAGMENT;
+
 
 /**
  * The PerFragmentUtil is scoped with @PerFragment.

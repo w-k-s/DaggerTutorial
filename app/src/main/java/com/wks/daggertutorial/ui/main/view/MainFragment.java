@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wks.daggertutorial.R;
-import com.wks.daggertutorial.base.BaseFragment;
+import com.wks.daggertutorial.ui.common.view.BaseFragment;
 import com.wks.daggertutorial.ui.main.MainFragmentListener;
 
 import javax.inject.Inject;
@@ -18,7 +18,7 @@ import butterknife.OnClick;
  * Created by waqqassheikh on 26/02/2018.
  */
 
-public class MainFragment extends BaseFragment{
+public class MainFragment extends BaseFragment {
 
     @Inject
     MainFragmentListener listener;
