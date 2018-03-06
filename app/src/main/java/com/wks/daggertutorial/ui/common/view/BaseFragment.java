@@ -1,29 +1,27 @@
 package com.wks.daggertutorial.ui.common.view;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasFragmentInjector;
+import dagger.android.support.AndroidSupportInjection;
+import dagger.android.support.HasSupportFragmentInjector;
 
 /**
  * Created by waqqassheikh on 06/03/2018.
  */
 
-public class BaseFragment extends Fragment implements HasFragmentInjector{
+public class BaseFragment extends Fragment implements HasSupportFragmentInjector{
     /**
      * The activity Context, which is provided by the BaseActivityModule, is injected here
      */
@@ -42,22 +40,11 @@ public class BaseFragment extends Fragment implements HasFragmentInjector{
 
     private Unbinder unbinder;
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onAttach(Activity activity) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // Perform injection here before M, L (API 22) and below because onAttach(Context)
-            // is not yet available at L.
-            AndroidInjection.inject(this);
-        }
-        super.onAttach(activity);
-    }
-
     @Override
     public void onAttach(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // Perform injection here for M (API 23) due to deprecation of onAttach(Activity).
-            AndroidInjection.inject(this);
+            AndroidSupportInjection.inject(this);
         }
         super.onAttach(context);
     }
@@ -99,7 +86,7 @@ public class BaseFragment extends Fragment implements HasFragmentInjector{
     //-- HasFragmentInjector
 
     @Override
-    public AndroidInjector<Fragment> fragmentInjector() {
+    public AndroidInjector<Fragment> supportFragmentInjector() {
         return fragmentInjector;
     }
 }

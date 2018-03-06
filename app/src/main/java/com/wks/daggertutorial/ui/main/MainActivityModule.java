@@ -1,6 +1,6 @@
 package com.wks.daggertutorial.ui.main;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wks.daggertutorial.base.BaseActivityModule;
 import com.wks.daggertutorial.dependencies.PerActivity;
@@ -26,7 +26,7 @@ public abstract class MainActivityModule {
      */
     @Binds
     @PerActivity
-    abstract Activity mainActivity(MainActivity mainActivity);
+    abstract AppCompatActivity mainActivity(MainActivity mainActivity);
 
     /**
      * The mainFragmentListener takes in the MainActivity, which implements MainFragmentListener,

@@ -1,6 +1,6 @@
 package com.wks.daggertutorial.util;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wks.daggertutorial.dependencies.PerActivity;
 
@@ -19,10 +19,10 @@ import javax.inject.Inject;
 @PerActivity
 public class PerActivityUtil {
 
-    private final Activity activity;
+    private final AppCompatActivity activity;
 
     @Inject
-    public PerActivityUtil(Activity activity){
+    public PerActivityUtil(AppCompatActivity activity){
         this.activity = activity;
     }
 

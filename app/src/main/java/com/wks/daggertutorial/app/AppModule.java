@@ -9,14 +9,14 @@ import com.wks.daggertutorial.ui.main.MainActivity;
 import com.wks.daggertutorial.ui.main.MainActivityModule;
 
 import dagger.Module;
-import dagger.android.AndroidInjectionModule;
 import dagger.android.ContributesAndroidInjector;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 /**
  * The AppModule is an abstract class that is annotated with the @Module annotation and includes the AndroidInjectionModule,
  * AndroidInjectionModule contains bindings to ensure the usability of dagger.android framework classes
  */
-@Module(includes = AndroidInjectionModule.class)
+@Module(includes = AndroidSupportInjectionModule.class)
 public abstract class AppModule {
 
 

@@ -1,7 +1,6 @@
 package com.wks.daggertutorial.util;
 
-
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 
 import com.wks.daggertutorial.dependencies.PerFragment;
 

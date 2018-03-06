@@ -1,6 +1,6 @@
 package com.wks.daggertutorial.ui.examples.example1;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.wks.daggertutorial.base.BaseActivityModule;
 import com.wks.daggertutorial.dependencies.PerActivity;
@@ -22,5 +22,5 @@ public abstract class Example1ActivityModule {
 
     @Binds
     @PerActivity
-    abstract Activity activity(Example1Activity activity);
+    abstract AppCompatActivity activity(Example1Activity activity);
 }
