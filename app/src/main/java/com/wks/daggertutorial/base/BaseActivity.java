@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 
+import com.wks.daggertutorial.navigation.Navigator;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -20,6 +22,9 @@ public class BaseActivity extends Activity implements HasFragmentInjector{
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentInjector;
+
+    @Inject
+    protected Navigator navigator;
 
     @Inject
     @Named(BaseActivityModule.ACTIVITY_FRAGMENT_MANAGER)

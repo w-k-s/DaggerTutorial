@@ -1,12 +1,12 @@
 package com.wks.daggertutorial.app;
 
 import com.wks.daggertutorial.dependencies.PerActivity;
-import com.wks.daggertutorial.examples.example1.Example1Activity;
-import com.wks.daggertutorial.examples.example1.Example1ActivityModule;
-import com.wks.daggertutorial.examples.example2.Example2Activity;
-import com.wks.daggertutorial.examples.example2.Example2ActivityModule;
-import com.wks.daggertutorial.main.MainActivity;
-import com.wks.daggertutorial.main.MainActivityModule;
+import com.wks.daggertutorial.ui.examples.example1.Example1Activity;
+import com.wks.daggertutorial.ui.examples.example1.Example1ActivityModule;
+import com.wks.daggertutorial.ui.examples.example2.Example2Activity;
+import com.wks.daggertutorial.ui.examples.example2.Example2ActivityModule;
+import com.wks.daggertutorial.ui.main.MainActivity;
+import com.wks.daggertutorial.ui.main.MainActivityModule;
 
 import dagger.Module;
 import dagger.android.AndroidInjectionModule;
